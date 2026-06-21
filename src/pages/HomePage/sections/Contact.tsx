@@ -4,23 +4,43 @@
 import React from 'react';
 import ContactCta from '@/components/sections/contact/ContactCta';
 import SectionErrorBoundary from "@/components/ui/SectionErrorBoundary";
+import { MapPin, Phone, Clock } from 'lucide-react';
 
 export default function ContactSection(): React.JSX.Element {
   return (
-    <div id="contact" data-section="contact">
+    <div id="contact" data-section="contact" className="py-24 bg-background">
         <SectionErrorBoundary name="contact">
-              <ContactCta
-          tag="Bookings"
-          text="Ready for an exquisite meal? Reserve your table today."
-          primaryButton={{
-            text: "Book Now",
-            href: "#",
-          }}
-          secondaryButton={{
-            text: "Contact Us",
-            href: "#",
-          }}
-        />
+          <div className="w-content-width mx-auto mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="card p-8 flex flex-col items-center text-center">
+                <MapPin className="w-10 h-10 text-accent mb-4" />
+                <h3 className="text-xl font-bold mb-2">Location</h3>
+                <p className="opacity-80">3200 N Henry Blvd, Ste E<br/>Stockbridge, GA 30281</p>
+              </div>
+              <div className="card p-8 flex flex-col items-center text-center">
+                <Phone className="w-10 h-10 text-accent mb-4" />
+                <h3 className="text-xl font-bold mb-2">Phone</h3>
+                <p className="opacity-80">770-685-0816</p>
+              </div>
+              <div className="card p-8 flex flex-col items-center text-center">
+                <Clock className="w-10 h-10 text-accent mb-4" />
+                <h3 className="text-xl font-bold mb-2">Hours</h3>
+                <p className="opacity-80">Tue-Fri: 9:00 AM - 8:00 PM<br/>Sat: 9:00 AM - 9:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <ContactCta
+            tag="Bookings"
+            text="Ready for a refreshing hair spa experience? Book your appointment today."
+            primaryButton={{
+              text: "Book Now",
+              href: "#",
+            }}
+            secondaryButton={{
+              text: "Call Us",
+              href: "tel:7706850816",
+            }}
+          />
         </SectionErrorBoundary>
       </div>
   );
