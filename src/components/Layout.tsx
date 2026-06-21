@@ -43,6 +43,7 @@ export default function Layout() {
       <SectionErrorBoundary name="navbar">
         <NavbarFloatingLogo
       logo="Culinary Bliss"
+      logoImageSrc="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop"
       ctaButton={{
         text: "Order Now",
         href: "#contact",
