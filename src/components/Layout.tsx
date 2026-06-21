@@ -8,32 +8,25 @@ import { StyleProvider } from "@/components/ui/StyleProvider";
 export default function Layout() {
   const navItems = [
   {
-    "name": "About",
-    "href": "#about"
+    "name": "About",    "href": "#about"
   },
   {
-    "name": "Menu",
-    "href": "#products"
+    "name": "Menu",    "href": "#products"
   },
   {
-    "name": "Pricing",
-    "href": "#pricing"
+    "name": "Pricing",    "href": "#pricing"
   },
   {
-    "name": "Contact",
-    "href": "#contact"
+    "name": "Contact",    "href": "#contact"
   },
   {
-    "name": "Hero",
-    "href": "#hero"
+    "name": "Hero",    "href": "#hero"
   },
   {
-    "name": "Features",
-    "href": "#features"
+    "name": "Features",    "href": "#features"
   },
   {
-    "name": "Metrics",
-    "href": "#metrics"
+    "name": "Metrics",    "href": "#metrics"
   }
 ];
 
@@ -42,54 +35,41 @@ export default function Layout() {
       <SiteBackgroundSlot />
       <SectionErrorBoundary name="navbar">
         <NavbarFloatingLogo
-      logo="Culinary Bliss"
-      logoImageSrc="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop"
-      ctaButton={{
-        text: "Order Now",
-        href: "#contact",
-      }}
-     navItems={navItems} />
+          logo="Culinary Bliss"
+          logoImageSrc="http://img.b2bpic.net/free-photo/two-white-paper-cups-against-clean-white-backdrop_187299-47607.jpg"
+          ctaButton={{
+            text: "Order Now",            href: "#contact"}}
+          navItems={navItems}
+        />
       </SectionErrorBoundary>
       <main className="flex-grow">
         <Outlet />
       </main>
       <SectionErrorBoundary name="footer">
         <FooterBasic
-      columns={[
-        {
-          title: "Explore",
-          items: [
+          columns={[
             {
-              label: "About",
-              href: "#about",
+              title: "Explore",              items: [
+                {
+                  label: "About",                  href: "#about"},
+                {
+                  label: "Menu",                  href: "#products"},
+                {
+                  label: "Pricing",                  href: "#pricing"},
+              ],
             },
             {
-              label: "Menu",
-              href: "#products",
+              title: "Contact",              items: [
+                {
+                  label: "Email",                  href: "mailto:hello@culinary.com"},
+                {
+                  label: "Phone",                  href: "tel:+123456789"},
+              ],
             },
-            {
-              label: "Pricing",
-              href: "#pricing",
-            },
-          ],
-        },
-        {
-          title: "Contact",
-          items: [
-            {
-              label: "Email",
-              href: "mailto:hello@culinary.com",
-            },
-            {
-              label: "Phone",
-              href: "tel:+123456789",
-            },
-          ],
-        },
-      ]}
-      leftText="© 2024 Culinary Bliss. All rights reserved."
-      rightText="Privacy Policy"
-    />
+          ]}
+          leftText="© 2024 Culinary Bliss. All rights reserved."
+          rightText="Privacy Policy"
+        />
       </SectionErrorBoundary>
     </StyleProvider>
   );
